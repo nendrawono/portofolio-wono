@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lasmargo Nendra Wono — Software Engineer</title>
+    <meta name="description" content="Portfolio Lasmargo Nendrawono — Software Engineer" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root{--bg:#050505;--neon:#00ff41;--muted:#a0d2ab}
+      html{scroll-behavior:smooth}
+      body{background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial}
+      .neon-shadow{text-shadow:0 0 18px rgba(0,255,65,0.35)}
+      .glass-pill{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);backdrop-filter:blur(6px)}
+      canvas#matrix{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.45}
+      .mask-fade{mask-image:linear-gradient(to bottom, black 0%, black 60%, transparent 100%);-webkit-mask-image:linear-gradient(to bottom, black 0%, black 60%, transparent 100%)}
+    </style>
+  </head>
+  <body class="min-h-screen text-white relative">
+
+    <canvas id="matrix"></canvas>
+    <div class="fixed inset-0 bg-black/40 z-0 pointer-events-none mask-fade"></div>
+
+    <header class="absolute top-6 left-6 right-6 z-50 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="text-[18px] font-mono font-bold text-white bg-[rgba(0,255,65,0.06)] p-2 rounded-md border border-[rgba(0,255,65,0.12)] neon-shadow">
+          WONOX<span class="text-[var(--neon)] animate-pulse">_</span>
+        </div>
+        <!-- Desktop nav -->
+        <nav id="nav-links" class="hidden lg:flex items-center gap-6 glass-pill px-4 py-2">
+          <a href="#about" class="text-sm text-gray-300 hover:text-white transition">About</a>
+          <a href="#projects" class="text-sm text-gray-300 hover:text-white transition">Projects</a>
+          <a href="#contact" class="text-sm text-gray-300 hover:text-white transition">Contact</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="glass-pill px-4 py-2 rounded-full text-[var(--neon)] hover:text-[#4dff79] transition">Let's Talk</a>
+        <!-- Mobile menu button -->
+        <button id="menu-btn" aria-label="Toggle menu" aria-expanded="false" class="lg:hidden ml-2 p-2 rounded-md bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.04)]">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--neon)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="relative z-10 flex flex-col items-center justify-center text-center pt-32 pb-32 px-6 w-full">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-6xl lg:text-[80px] font-outfit font-semibold leading-tight neon-shadow text-white">L A S M A R G O <br>Nendra Wono</h1>
+        <p class="mt-4 text-lg md:text-xl font-mono text-[var(--muted)] max-w-2xl mx-auto">Software Engineer — membangun aplikasi web, automasi, dan solusi yang dapat diskalakan.</p>
+
+        <div class="mt-8 flex items-center justify-center gap-4">
+          <a href="#projects" class="glass-pill px-6 py-3 rounded-full text-[var(--neon)] font-mono tracking-wide hover:bg-[rgba(0,255,65,0.06)] transition">Projects</a>
+          <a href="#contact" class="glass-pill px-6 py-3 rounded-full text-white hover:bg-white/6 transition">Contact</a>
+        </div>
+      </div>
+
+      <section id="about" class="mt-12 max-w-3xl mx-auto text-left">
+        <div class="glass-pill p-6 rounded-xl">
+          <h2 class="text-2xl font-semibold mb-2">About</h2>
+          <p class="text-[var(--muted)]">Nama: <strong>Lasmargo Nendra Wono</strong></p>
+          <p class="text-[var(--muted)] mt-2">Role: <strong>Software Engineer</strong></p>
+          <p class="text-[var(--muted)] mt-4">Ringkasan: Saya seorang Software Engineer yang berfokus pada pembangunan aplikasi web, automasi, dan integrasi sistem. Saya berpengalaman membuat solusi yang handal, dapat diskalakan, dan mudah dipelihara. Saya menikmati menyederhanakan masalah kompleks dan menerapkannya menjadi produk nyata.</p>
+          <div class="mt-4">
+            <h4 class="font-semibold">Skills</h4>
+            <ul class="text-[var(--muted)] list-disc list-inside mt-2">
+              <li>Web Development (HTML, CSS, JavaScript)</li>
+              <li>Automation & Scripting</li>
+              <li>API Integration</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="mt-8 w-full max-w-4xl mx-auto">
+        <h3 class="text-xl font-semibold mb-4">Selected Projects</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article class="glass-pill p-4 rounded-lg">
+            <h4 class="font-semibold">Project A — Web Automation</h4>
+            <p class="text-[var(--muted)] text-sm mt-2">Automasi proses internal menggunakan script dan pipeline CI/CD.</p>
+          </article>
+          <article class="glass-pill p-4 rounded-lg">
+            <h4 class="font-semibold">Project B — Dashboard</h4>
+            <p class="text-[var(--muted)] text-sm mt-2">Dashboard analitik ringan untuk monitoring performa aplikasi.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="mt-10 w-full max-w-2xl mx-auto text-left">
+        <div class="glass-pill p-6 rounded-xl">
+          <h3 class="text-lg font-semibold">Contact</h3>
+          <p class="text-[var(--muted)] mt-2">Email: <a href="mailto:lasmargo.nendrawono@gmail.com" class="text-[var(--neon)]">lasmargo.nendrawono@gmail.com</a></p>
+          <p class="text-[var(--muted)] mt-2">Github: <a href="https://github.com/nendrawono" class="text-[var(--neon)]">nendrawono</a></p>
+          <p class="text-[var(--muted)] mt-2">LinkedIn: <a href="https://id.linkedin.com/in/lasmargo-nendra-wono" class="text-[var(--neon)]">lasmargo nendra wono</a></p>
+          <p class="text-[var(--muted)] mt-2">Instagram: <a href="https://www.instagram.com/nendrawono" class="text-[var(--neon)]">nendrawono</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 text-center py-8 text-gray-400">
+      <small>© 2026 Lasmargo Nendrawono — Software Engineer</small>
+    </footer>
+
+    <script>
+      // Simple Matrix rain canvas inspired by promp.md (throttled, minimal)
+      const canvas = document.getElementById('matrix');
+      const ctx = canvas.getContext('2d');
+      let width, height, columns, drops, fontSize = 16;
+
+      const chars = 'アカサタナハマヤラワガザダバパABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+      function resize(){
+        width = canvas.width = innerWidth;
+        height = canvas.height = innerHeight;
+        columns = Math.floor(width / fontSize);
+        drops = Array(columns).fill(1);
+      }
+
+      function draw(){
+        ctx.fillStyle = 'rgba(5,5,5,0.06)';
+        ctx.fillRect(0,0,width,height);
+        ctx.font = fontSize + 'px monospace';
+        ctx.fillStyle = '#00ff41';
+        for(let i=0;i<columns;i++){
+          const text = chars.charAt(Math.floor(Math.random()*chars.length));
+          ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+          if(drops[i]*fontSize > height && Math.random() > 0.975) drops[i]=0;
+          drops[i]++;
+        }
+      }
+
+      function loop(){
+        draw();
+      }
+
+      window.addEventListener('resize', resize);
+      resize();
+      setInterval(loop, 1000/30); // ~30 FPS
+
+      // Mobile menu toggle and nav behavior
+      (function(){
+        const menuBtn = document.getElementById('menu-btn');
+        const nav = document.getElementById('nav-links');
+        if(!menuBtn || !nav) return;
+        function openNav(){
+          menuBtn.setAttribute('aria-expanded','true');
+          nav.classList.remove('hidden');
+          nav.classList.add('flex','flex-col','items-start','absolute','top-16','left-6','right-6','gap-3','p-4','z-50');
+        }
+        function closeNav(){
+          menuBtn.setAttribute('aria-expanded','false');
+          nav.classList.add('hidden');
+          nav.classList.remove('flex','flex-col','items-start','absolute','top-16','left-6','right-6','gap-3','p-4','z-50');
+        }
+        menuBtn.addEventListener('click', ()=>{
+          if(nav.classList.contains('hidden')) openNav(); else closeNav();
+        });
+        // Close menu when a link is clicked (mobile)
+        nav.querySelectorAll('a').forEach(a=>a.addEventListener('click', ()=>{ if(window.innerWidth<1024) closeNav(); }));
+        // Close on resize to large
+        window.addEventListener('resize', ()=>{ if(window.innerWidth>=1024){ nav.classList.add('hidden'); nav.classList.remove('flex','flex-col','items-start','absolute','top-16','left-6','right-6','gap-3','p-4','z-50'); menuBtn.setAttribute('aria-expanded','false'); } });
+      })();
+    </script>
+  </body>
+</html>
